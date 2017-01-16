@@ -226,7 +226,7 @@ public class Main {
         boolean showMessage = true;
         String latestFound = "";
         if (!card.contains("Standard VGA") && !card.contains("Microsoft Basic")) {
-            card = resolveWrong(card.replace("NVIDIA ", "").replace("(R)", "").replace("AMD ", "").replace("®", "").trim());
+            card = resolveWrong(card.replace("NVIDIA ", "").replace("(R)", "").replace("AMD ", "").replace("Edition","" ).replace("®", "").trim());
             for (Config.GPU gpu : DownloadMain.config.manual) {
                 if (contains(gpu.name, card) && showMessage) {
                     String download = gpu.getDownload(minified, is64);
